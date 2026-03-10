@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume - Subrat Kumar Ratha</title>
+    <style>
+   
+    /* =========================================
+   1. RESUME PAGE (PAPER LOOK)
+   Isse aapka resume A4 size ka dikhega
+   ========================================= */
+body {
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.resume-container {
+    background-color: white;
+    width: 260mm;
+    min-height: 297mm;
+    padding: 20mm;
+    border: 2px solid black;
+    box-shadow: 0 0 18px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+/* ... aapka purana code ... */
+    border-radius: 25px; /* Isse corners thode gol ho jayenge */
+
+}
+
+/* =========================================
+   2. SLIDER SETTINGS (IMAGE SCROLLING)
+   Yahan se gap aur speed control hota hai
+   ========================================= */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    white-space: nowrap;
+    position: relative;
+    padding: 20px 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.slide-track {
+    display: flex;
+    /* (300px image + 40px gap) * 14 images */
+    width: calc(340px * 14); 
+    animation: scroll 25s linear infinite;
+}
+
+/* Mouse hover par rukne ke liye */
+.slider-container:hover .slide-track {
+    animation-play-state: paused;
+}
+
+/* Har image aur button ka group (Gap yahan se badlega) */
+.slide-item {
+    width: 300px;
+    margin: 0 20px; /* 20px left + 20px right = 40px total gap */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Slider ki Images */
+.slide-item img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top; /* Image ka upar wala part dikhega */
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Thoda round corner image ke liye */
+}
+
+/* =========================================
+   3. BUTTON STYLE (IMAGE LABELS)
+   Yahan se button ka color aur round shape badlega
+   ========================================= */
+.slide-item p {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #ff4757; /* Lal (Red) color ka button */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 25px;      /* Poora round shape */
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* Button par mouse le jane par effect */
+.slide-item p:hover {
+    background-color: green;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   4. ANIMATION (LOOP CALCULATION)
+   Isse bina kisi jhatke ke loop chalta hai
+   ========================================= */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-340px * 7)); } 
+}
+
+/* =========================================
+   5. OTHER TAGS (TABLE & MARQUEE)
+   ========================================= */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+marquee {
+    font-weight: bold;
+}
+    </style>
+</head>
+
+<body> 
+    <div class="resume-container">
+
+        <hr color="GREEN" style="height: 5px; border:none; background-color: red;"> 
+        <h1 align="CENTER"> RESUME OF  <br> SUBRAT KUMAR RATHA </h1>
+        <hr color="GREEN">
+
+        <font size="5" face="Exotc350 Bd BT">
+            <marquee bgcolor="yellow" scrollamount="7" direction="left">
+                HELLO, MY NAME IS <b>SUBRAT KUMAR RATHA.</b> AND THIS WEBSITE IS MADE BY ME TO CREATE A DIGITAL RESUME!
+            </marquee>
+        </font>
+        
+        <hr color="black">
+
+        <h2 align="center" style="color:red; font-family: 'Colonna MT';">BASIC INFORMATION</h2>
+        
+        <img src="SRK PASSBOARD IMG.jpg" width="150" align="right" style="border: 3px solid black; margin-left: 10px;" alt="Profile Photo" >  
+
+        <ul>            
+            <li> NAME:- <b>SUBRAT KUMAR RATHA</b></li>
+            <li> FATHER NAME :- <b> MAHENDRA RATHA</b></li>
+            <li> MOTHER NAME:- <b><font size="4">BISHNUPRIYA RATHA</font></b></li>
+	    <li> DOB:- <b><font size="4">17/10/2006</font></b></li>
+            <li> COUNTRY:- <b> INDIA</b></li>
+            <li> STATE:- <b>ODISHA </b></li>
+            <li> DISTRICT:- <b>SONEPUR</b></li>
+            <li> BLOCK:- <b>BINKA</b></li>
+            <li> VILLAGE:- <b>URLEY</b></li>
+            <li> BLOOD GROUP:- <b>B+</b></li>
+	    <li> CONTACT.NO:- <b>7008244148 / 8260739946</b></li>
+
+        </ul>
+
+        <br><br>
+	<hr color="black">
+        <h2 align="center" style="color:blue">ACADEMIC DETAILS</h2>
+	<hr color="black">
+
+        <table>    
+            <tr bgcolor="#f2f2f2">      
+                <th>Sr.No</th>
+                <th>Class</th>
+                <th>District</th>
+                <th>School/College</th>
+                <th>Duration (Year)</th>
+                <th>Percentage</th>
+            </tr>
+            <tr>      
+                <td>01</td>
+                <td> 10<sup>th</sup></td>
+                <td>SONEPUR</td>
+                <td>SARASWATI SHISHU VIDYA MANDIR, BINKA</td>
+                <td>1 YEAR</td>
+                <td>83%</td>
+            </tr>
+            <tr>      
+                <td>02</td>
+                <td>+2</td>
+                <td>SAMBALPUR</td>
+                <td>VEDIC INTERNATIONAL SCHOOL</td>
+                <td>2 YEAR</td>
+                <td>81%</td>
+            </tr>
+            <tr>      
+                <td>03</td>
+                <td>+3</td>
+                <td>SAMBALPUR</td>
+                <td>GANGADHAR MEHER UNIVERSITY</td>
+                <td>3 YEAR</td>
+                <td>Appearing</td>
+            </tr>
+        </table>
+ <br><br>
+
+
+<hr color="black">
+<h2 align="center" style="color:blue" margin-top:0px;>ACADEMIC CERTIFICATE</h2>
+<h4 align="center">To View Image (certificate) Click On Image</h4>
+<hr color="black">
+
+	<div class="slider-container">
+    <div class="slide-track">
+                
+
+ <div class="slide-item">
+                <img src="+31st.jpg" onclick="window.open(this.src)" alt="Sem 1">
+                <p>+3 First Semester</p>
+            </div>
+
+        <div class="slide-item">
+            <img src="B.jpg" onclick="window.open(this.src)" style="border: 3px solid black; margin-left: 10px;" alt="Profile Photo">
+            <p align="center">Birth Certificate</p>
+        </div>
+       
+	<div class="slide-item">
+    <img src="RC.jpg" onclick="window.open(this.src)" style="border:3px solid green;">
+    <p class="btn-residence">Residence Certificate</p>
+</div>
+
+<div class="slide-item">
+    <img src="COM.jpg" onclick="window.open(this.src)" style="border:3px solid yellow;">
+    <p class="btn-computer">OSCIT Computer Certificate</p>
+</div>
+
+<div class="slide-item">
+    <img src="10th.jpg" onclick="window.open(this.src)" style="border:3px solid red;">
+    <p class="btn-10th">10th Certificate</p>
+</div>
+
+<div class="slide-item">
+    <img src="12th.jpg" onclick="window.open(this.src)" style="border:3px solid blue;">
+    <p class="btn-12th">12th Certificate</p>
+</div>
+
+<div class="slide-item">
+    <img src="IKS.jpg" onclick="window.open(this.src)" style="border:3px solid pink;">
+    <p class="btn-iks">India Knowledge System</p>
+</div>
+
+<div class="slide-item">
+    <img src="+31st.jpg" onclick="window.open(this.src)" style="border:3px solid teal;">
+    <p class="btn-3rd">+3 first semester</p>
+</div>
+
+<div class="slide-item">
+    <img src="B.jpg" onclick="window.open(this.src)" style="border:3px solid maroon;">
+    <p class="btn-birth">Birth Certificate</p>
+</div>
+
+    
+    </div>
+</div>
+
+
+
+
+
+    </div> </body>
+</html>
