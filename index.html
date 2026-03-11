@@ -116,10 +116,57 @@
         marquee {
             font-weight: bold;
         }
+
+	/* =========================================
+           5. download button 
+        ========================================= */
+
+@media print {
+    /* Download button aur slider ko print mein hide karne ke liye */
+    .download-btn, .slider-container, h4, marquee {
+        display: none !important;
+    }
+    
+    body {
+        background-color: white;
+        padding: 0;
+    }
+
+    .resume-container {
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        margin: 0;
+        padding: 10mm;
+    }
+}
+
+/* Download Button ka look */
+.download-btn {
+    background-color: #2ed573;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #21ad5c;
+    transform: scale(1.05);
+}
     </style>
 </head>
 
 <body> 
+	<center>
+    <button class="download-btn" onclick="printResume()">📥 Download PDF / Print Resume</button>
+</center>
     <div class="resume-container">
 
         <hr style="height: 5px; border:none; background-color: red;"> 
@@ -150,6 +197,8 @@
             <li> VILLAGE:- <b>URLEY</b></li>
             <li> BLOOD GROUP:- <b>B+</b></li>
             <li> CONTACT.NO:- <b>7008244148 / 8260739946</b></li>
+	    <li> GMAIL ID:- <b>subratr965@gmail.com</b></li>
+
         </ul>
 
         <br><br>
@@ -261,5 +310,11 @@
         </div>
 
     </div> 
+
+	<script>
+    function printResume() {
+        window.print();
+    }
+</script>
 </body>
 </html>
