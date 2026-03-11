@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Subrat Kumar Ratha</title>
     <style>
         /* =========================================
@@ -9,45 +11,69 @@
         body {
             background-color: #e0e0e0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
             font-family: Arial, sans-serif;
         }
 
         .resume-container {
             background-color: white;
-            width: 250mm;
+            width: 260mm;
             min-height: 297mm;
             padding: 20mm;
             border: 2px solid black;
             box-shadow: 0 0 18px rgba(0,0,0,0.3);
             box-sizing: border-box;
             border-radius: 25px;
+            position: relative;
         }
 
         /* =========================================
-           2. SLIDER SETTINGS
+           2. DOWNLOAD BUTTON STYLE
+        ========================================= */
+        .download-btn {
+            background-color: #2ed573;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #21ad5c;
+            transform: scale(1.05);
+        }
+
+        /* =========================================
+           3. SLIDER (AUTO + MANUAL DRAG)
         ========================================= */
         .slider-container {
             width: 100%;
-            overflow: hidden;
+            overflow-x: hidden; /* JavaScript handles the scroll */
             background: #fff;
             white-space: nowrap;
             position: relative;
             padding: 20px 0;
             border-top: 2px solid black;
             border-bottom: 2px solid black;
+            cursor: grab;
+            user-select: none; /* Text select na ho drag karte waqt */
+        }
+
+        .slider-container:active {
+            cursor: grabbing;
         }
 
         .slide-track {
             display: flex;
-            /* (300px image + 40px margin) * 14 items (7 original + 7 clones) */
-            width: calc(340px * 14); 
-            animation: scroll 15s linear infinite;
-        }
-
-        .slider-container:hover .slide-track {
-            animation-play-state: paused;
+            width: max-content;
         }
 
         .slide-item {
@@ -57,22 +83,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            pointer-events: none; /* Taaki click/drag smooth ho */
         }
 
         .slide-item img {
             width: 300px;
             height: 200px;
             object-fit: cover;
-            object-position: top;
-            cursor: pointer;
             border: 1px solid #ddd;
             border-radius: 10px;
-            transition: 0.3s;
+            pointer-events: auto; /* Image click allow karne ke liye */
         }
 
-        /* =========================================
-           3. BUTTON STYLE
-        ========================================= */
         .slide-item p {
             display: inline-block;
             margin-top: 15px;
@@ -82,102 +104,37 @@
             font-size: 14px;
             font-weight: bold;
             border-radius: 25px;
-            cursor: pointer;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-
-        .slide-item p:hover {
-            background-color: green;
-            transform: scale(1.05);
         }
 
         /* =========================================
-           4. ANIMATION (Smooth Loop)
+           4. PRINT SETTINGS (PDF MEIN KYA DIKHEGA)
         ========================================= */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            /* Move by exactly 7 items to loop back to the start of the clones */
-            100% { transform: translateX(calc(-340px * 7)); } 
+        @media print {
+            .download-btn, .slider-container, h4, marquee {
+                display: none !important;
+            }
+            body { background: white; padding: 0; }
+            .resume-container { border: none; box-shadow: none; width: 100%; padding: 10mm; }
         }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-
-        marquee {
-            font-weight: bold;
-        }
-
-	/* =========================================
-           5. download button 
-        ========================================= */
-
-@media print {
-    /* Download button aur slider ko print mein hide karne ke liye */
-    .download-btn, .slider-container, h4, marquee {
-        display: none !important;
-    }
-    
-    body {
-        background-color: white;
-        padding: 0;
-    }
-
-    .resume-container {
-        border: none;
-        box-shadow: none;
-        width: 100%;
-        margin: 0;
-        padding: 10mm;
-    }
-}
-
-/* Download Button ka look */
-.download-btn {
-    background-color: #2ed573;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.download-btn:hover {
-    background-color: #21ad5c;
-    transform: scale(1.05);
-}
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        marquee { font-weight: bold; }
     </style>
 </head>
 
-<body> 
-	<center>
-    <button class="download-btn" onclick="printResume()">📥 Download PDF / Print Resume</button>
-</center>
-    <div class="resume-container">
+<body>
 
+    <button class="download-btn" onclick="printResume()">📥 Download PDF / Print Resume</button>
+
+    <div class="resume-container">
         <hr style="height: 5px; border:none; background-color: red;"> 
         <h1 align="CENTER"> RESUME OF <br> SUBRAT KUMAR RATHA </h1>
         <hr color="GREEN">
 
-        <font size="5">
-            <marquee bgcolor="yellow" scrollamount="7" direction="left">
-                HELLO, MY NAME IS <b>SUBRAT KUMAR RATHA.</b> AND THIS WEBSITE IS MADE BY ME TO CREATE A DIGITAL RESUME!
-            </marquee>
-        </font>
+        <marquee bgcolor="yellow" scrollamount="7">
+            HELLO, MY NAME IS <b>SUBRAT KUMAR RATHA.</b> AND THIS WEBSITE IS MADE BY ME TO CREATE A DIGITAL RESUME!
+        </marquee>
         
         <hr color="black">
 
@@ -195,13 +152,12 @@
             <li> DISTRICT:- <b>SONEPUR</b></li>
             <li> BLOCK:- <b>BINKA</b></li>
             <li> VILLAGE:- <b>URLEY</b></li>
-            <li> BLOOD GROUP:- <b>B+</b></li>
             <li> CONTACT.NO:- <b>7008244148 / 8260739946</b></li>
-	    <li> GMAIL ID:- <b>subratr965@gmail.com</b></li>
+            <li> GMAIL ID:- <b>subratr965@gmail.com</b></li>
 
         </ul>
 
-        <br><br>
+        <br>
         <hr color="black">
         <h2 align="center" style="color:blue">ACADEMIC DETAILS</h2>
         <hr color="black">
@@ -209,113 +165,127 @@
         <table>    
             <tr bgcolor="#f2f2f2">      
                 <th>Sr.No</th>
-                <th>Class</th>
-                <th>District</th>
-                <th>School/College</th>
-                <th>Duration (Year)</th>
-                <th>Percentage</th>
-            </tr>
-            <tr>      
-                <td>01</td>
-                <td> 10<sup>th</sup></td>
-                <td>SONEPUR</td>
-                <td>SARASWATI SHISHU VIDYA MANDIR, BINKA</td>
-                <td>1 YEAR</td>
-                <td>83%</td>
-            </tr>
-            <tr>      
-                <td>02</td>
-                <td>+2</td>
-                <td>SAMBALPUR</td>
-                <td>VEDIC INTERNATIONAL SCHOOL</td>
-                <td>2 YEAR</td>
-                <td>81%</td>
+		<th>Class</th>
+		<th>District</th>
+		<th>School/College</th>
+		<th>Year</th>
+		<th>%</th>
             </tr>
 
-	 <tr>      
-                <td>03</td>
-                <td>OSCIT</td>
-                <td>SONEPUR</td>
-                <td>NICE COMPUTER ACADEMY</td>
-                <td>6 month</td>
-                <td>81.4</td>
-            </tr>
+            <tr><td>01</td>
+<td>10<sup>th</sup></td>
+<td>SONEPUR</td>
+<td>Saraswati Shishu Vidya Mandir, BINKA</td>
+<td>1 YEAR</td>
+<td>83%</td>
+</tr>
+          
+  <tr>
+<td>02</td>
+<td>+2</td>
+<td>SAMBALPUR</td>
+<td>VEDIC INT. SCHOOL</td>
+<td>2 YEAR</td>
+<td>81%</td>
+</tr>
+    
+<tr><td>03</td>
+<td>OSCIT COMPUTER </td>
+<td>SONEPUR</td>
+<td>NICE COMPURTER ACADEMY</td>
+<td>6 MONTH</td>
+<td>81.4%</td>
+</tr>
+        
+<tr>
+<td>04</td>
+<td>+3</td>
+<td>SAMBALPUR</td>
+<td>GM UNIVERSITY</td>
+<td>3 YEAR</td>
+<td>Appearing</td>
+</tr>
 
-
-
-            <tr>      
-                <td>04</td>
-                <td>+3</td>
-                <td>SAMBALPUR</td>
-                <td>GANGADHAR MEHER UNIVERSITY</td>
-                <td>3 YEAR</td>
-                <td>Appearing</td>
-            </tr>
+ 
+	
         </table>
         
-        <br><br>
-
+        <br>
         <hr color="black">
         <h2 align="center" style="color:blue">ACADEMIC CERTIFICATE</h2>
-        <h4 align="center">To View Image (certificate) Click On Image</h4>
+        <h4 align="center">Slide manually or wait for auto-scroll. Click image to open.</h4>
         <hr color="black">
 
-        <div class="slider-container">
-            <div class="slide-track">
+        <div class="slider-container" id="slider">
+            <div class="slide-track" id="track">
+                <div class="slide-item"><img src="+31st.jpg" onclick="window.open(this.src)" style="border:3px solid teal;"><p>+3 First Sem</p></div>
+                <div class="slide-item"><img src="B.JPG" onclick="window.open(this.src)" style="border:3px solid maroon;"><p>Birth Certificate</p></div>
+                <div class="slide-item"><img src="RC.jpg" onclick="window.open(this.src)" style="border:3px solid green;"><p>Residence</p></div>
+                <div class="slide-item"><img src="COM.JPG" onclick="window.open(this.src)" style="border:3px solid yellow;"><p>OSCIT Computer</p></div>
+                <div class="slide-item"><img src="10th.jpg" onclick="window.open(this.src)" style="border:3px solid red;"><p>10th Certificate</p></div>
+                <div class="slide-item"><img src="12th.jpg" onclick="window.open(this.src)" style="border:3px solid blue;"><p>12th Certificate</p></div>
+                <div class="slide-item"><img src="IKS.jpg" onclick="window.open(this.src)" style="border:3px solid pink;"><p>IKS System</p></div>
                 
-                <div class="slide-item">
-                    <img src="+31st.jpg" onclick="window.open(this.src)" alt="Sem 1" style="border:3px solid teal;">
-                    <p>+3 First Semester</p>
-                </div>
-
-                <div class="slide-item">
-                    <img src="B.JPG" onclick="window.open(this.src)" style="border: 3px solid maroon;" alt="Birth Certificate">
-                    <p>Birth Certificate</p>
-                </div>
-               
-                <div class="slide-item">
-                    <img src="RC.jpg" onclick="window.open(this.src)" style="border:3px solid green;">
-                    <p>Residence Certificate</p>
-                </div>
-
-                <div class="slide-item">
-                    <img src="COM.JPG" onclick="window.open(this.src)" style="border:3px solid yellow;">
-                    <p>OSCIT Computer Certificate</p>
-                </div>
-
-                <div class="slide-item">
-                    <img src="10th.jpg" onclick="window.open(this.src)" style="border:3px solid red;">
-                    <p>10th Certificate</p>
-                </div>
-
-                <div class="slide-item">
-                    <img src="12th.jpg" onclick="window.open(this.src)" style="border:3px solid blue;">
-                    <p>12th Certificate</p>
-                </div>
-
-                <div class="slide-item">
-                    <img src="IKS.jpg" onclick="window.open(this.src)" style="border:3px solid pink;">
-                    <p>India Knowledge System</p>
-                </div>
-
-                <div class="slide-item"><img src="+31st.jpg" onclick="window.open(this.src)"><p>+3 First Semester</p></div>
+                <div class="slide-item"><img src="+31st.jpg" onclick="window.open(this.src)"><p>+3 First Sem</p></div>
                 <div class="slide-item"><img src="B.JPG" onclick="window.open(this.src)"><p>Birth Certificate</p></div>
-                <div class="slide-item"><img src="RC.jpg" onclick="window.open(this.src)"><p>Residence Certificate</p></div>
-                <div class="slide-item"><img src="COM.JPG" onclick="window.open(this.src)"><p>OSCIT Computer</p></div>
-                <div class="slide-item"><img src="10th.jpg" onclick="window.open(this.src)"><p>10th Certificate</p></div>
-                <div class="slide-item"><img src="12th.jpg" onclick="window.open(this.src)"><p>12th Certificate</p></div>
-                <div class="slide-item"><img src="IKS.jpg" onclick="window.open(this.src)"><p>India Knowledge System</p></div>
-
+                <div class="slide-item"><img src="RC.jpg" onclick="window.open(this.src)"><p>Residence</p></div>
             </div>
         </div>
+    </div>
 
-    </div> 
+    <script>
+        // 1. Print Function
+        function printResume() { window.print(); }
 
-	<script>
-    function printResume() {
-        window.print();
-    }
-</script>
+        // 2. Slider Logic (Auto + Manual)
+        const slider = document.getElementById('slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let scrollSpeed = 1; // Auto speed
+
+        // Auto Scroll Loop
+        function step() {
+            if (!isDown) {
+                slider.scrollLeft += scrollSpeed;
+                // Infinite reset
+                if (slider.scrollLeft >= (slider.scrollWidth / 2)) {
+                    slider.scrollLeft = 0;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+
+        // Manual Drag / Touch
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => isDown = false);
+        slider.addEventListener('mouseup', () => isDown = false);
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch Support for Mobile
+        slider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('touchend', () => isDown = false);
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
 </body>
 </html>
-
