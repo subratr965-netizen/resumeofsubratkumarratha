@@ -18,16 +18,30 @@
         }
 
         .resume-container {
-            background-color: white;
-            width: 200mm;
-            min-height: 297mm;
-            padding: 20mm;
-            border: 2px solid black;
-            box-shadow: 0 0 18px rgba(0,0,0,0.3);
-            box-sizing: border-box;
-            border-radius: 25px;
-            position: relative;
-        }
+    background-color: white;
+    /* Mobile ke liye width automatic adjust hogi */
+    width: 95%; 
+    /* Desktop par isse bada nahi hoga (A4 size approximation) */
+    max-width: 800px; 
+    
+    /* Height ko "auto" rakho taaki content ke hisaab se bade */
+    min-height: 100vh; 
+    
+    padding: 15px; /* Mobile par thoda kam padding */
+    border: 2px solid black;
+    box-shadow: 0 0 18px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin: 10px auto; /* Center karne ke liye */
+}
+
+/* Tablet aur Desktop ke liye padding badha do */
+@media (min-width: 768px) {
+    .resume-container {
+        padding: 40px;
+        width: 210mm; /* Exact A4 width */
+    }
+}
 
         /* =========================================
            2. DOWNLOAD BUTTON STYLE
@@ -289,5 +303,3 @@
     </script>
 </body>
 </html>
-
-
