@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Resume - Subrat Kumar Ratha</title>
-    <style>
+  <style>
         /* =========================================
-           1. RESUME PAGE (A4 SETTINGS)
+           1. RESUME PAGE (A4 SETTINGS + 0.8cm INCREASE)
         ========================================= */
         body {
             background-color: #e0e0e0;
@@ -19,11 +19,12 @@
 
         .resume-container {
             background-color: white;
-            width: 210mm; /* Standard A4 Width */
-            min-height: 297mm; /* Standard A4 Height */
+            /* 210mm + 8mm = 218mm */
+            width: 218mm; 
+            min-height: 297mm;
             padding: 15mm;
             border: 1px solid #d3d3d3;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
             box-sizing: border-box;
             position: relative;
         }
@@ -48,18 +49,43 @@
         .print-btn:hover { background-color: #27ae60; }
 
         /* =========================================
-           2. SLIDER (AUTO + MANUAL)
+           2. HOBBY & SKILLS SECTION STYLING
+        ========================================= */
+        .hobby-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            gap: 10px;
+        }
+
+        .hobby-box {
+            flex: 1;
+            border: 1.5px solid #ccc;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            background: #fdfdfd;
+            transition: 0.3s;
+        }
+
+        .hobby-box:hover {
+            border-color: #3498db;
+            background: #f0f7ff;
+        }
+
+        /* =========================================
+           3. SLIDER (AUTO + MANUAL)
         ========================================= */
         .slider-container {
             width: 100%;
-            overflow-x: auto; /* Manual Scroll Enabled */
+            overflow-x: auto;
             background: #fff;
             white-space: nowrap;
             position: relative;
             padding: 20px 0;
             border-top: 2px solid black;
             border-bottom: 2px solid black;
-            scrollbar-width: thin; /* For Firefox */
+            scrollbar-width: thin;
         }
 
         .slide-track {
@@ -68,13 +94,12 @@
             animation: scroll 30s linear infinite;
         }
 
-        /* Hover to Pause Auto-scroll and use Manual */
         .slider-container:hover .slide-track {
             animation-play-state: paused;
         }
 
         .slide-item {
-            width: 250px;
+            width: 260px; /* Thoda bada width nayi page width ke liye */
             margin: 0 15px;
             text-align: center;
             flex-shrink: 0;
@@ -82,7 +107,7 @@
 
         .slide-item img {
             width: 100%;
-            height: 160px;
+            height: 170px;
             object-fit: cover;
             border: 2px solid #ddd;
             border-radius: 8px;
@@ -99,7 +124,7 @@
         }
 
         /* =========================================
-           3. PRINT SETTINGS (Hides Button)
+           4. PRINT SETTINGS
         ========================================= */
         @media print {
             body { background: none; padding: 0; }
@@ -110,11 +135,11 @@
 
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-280px * 7)); } 
+            100% { transform: translateX(calc(-290px * 7)); } 
         }
 
         table { border-collapse: collapse; width: 100%; margin-top: 15px; }
-        th, td { border: 1px solid black; padding: 8px; text-align: left; font-size: 14px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: left; font-size: 14px; }
     </style>
 </head>
 
@@ -132,7 +157,7 @@
             </marquee>
         </font>
         
-        <hr color="black">
+       <hr color="black">
 
         <h2 align="center" style="color:red; margin: 10px 0;">BASIC INFORMATION</h2>
         
@@ -151,8 +176,8 @@
 
         </ul>
 
-
-											 <!-------hobbies and skills --------->
+				   
+        					  		 <!-------hobbies and skills --------->
      					  
 
 
@@ -187,17 +212,16 @@
     "I love exploring the intersection of technology and creativity."
 </p>
 
-
-					<!------table------>		
-
-		 <hr color="black">
+        <hr color="black">
         <h2 align="center" style="color:blue; margin: 10px 0;">ACADEMIC DETAILS</h2>
+	<hr color="black">
 
         <table>    
             <tr bgcolor="#f2f2f2">      
                 <th>Sr.No</th>
                 <th>Class</th>
                 <th>School/College</th>
+		<th>District</th>
                 <th>Year</th>
                 <th>Percentage</th>
             </tr>
@@ -205,6 +229,7 @@
                 <td>01</td>
                 <td>10<sup>th</sup></td>
                 <td>SSVM, BINKA</td>
+		<td>Sonepur</td>
                 <td>2022</td>
                 <td>83%</td>
             </tr>
@@ -212,6 +237,7 @@
                 <td>02</td>
                 <td>+2 (ARTS)</td>
                 <td>VEDIC INTERNATIONAL</td>
+		<td>Sambalpur</td>
                 <td>2024</td>
                 <td>81%</td>
             </tr>
@@ -219,7 +245,8 @@
 		<tr>      
                 <td>03</td>
                 <td>computer (OSCIT)</td>
-                <td>NICE ACADEMY L</td>
+                <td>NICE ACADEMY </td>
+		<td>Sonepur</td>
                 <td>2024</td>
                 <td>81.4%</td>
             </tr>
@@ -229,29 +256,21 @@
                 <td>04</td>
                 <td>+3 (Degree)</td>
                 <td>GM UNIVERSITY</td>
+		<td>Sambalpur</td>
                 <td>Current</td>
                 <td>Appearing(ECO)</td>
             </tr>
         </table>
-
-
-
-
-
-														
-
-										<!--------JAB ISS WEBSITE KO PRONT EY KOI PDF KIA JAIYA GA TAB YEHA TAK PAG 1 TAK SHOW KAARE GA
-											FER JAB AGAA ADD HOGA BOO PAGE 2 ME SHOW HO GA TO , yeaha koi aur elenment 
-												add nahi hona chiya . abb jo add karna he usko page 2 me add karo------>
-
-
-		
+        
         <br>
+	<br>
+	<br>
         <hr color="black">
         <h2 align="center" style="color:blue; margin: 10px 0;">ACADEMIC CERTIFICATES</h2>
         <p align="center" style="font-size: 12px;">(Hover to Pause | Drag to Scroll | Click to View)</p>
 
-        <div class="slider-container">
+      
+  <div class="slider-container">
             <div class="slide-track">
                 <div class="slide-item">
                     <img src="+31st.jpg" onclick="window.open(this.src)" alt="Sem 1">
@@ -289,5 +308,3 @@
     </div> 
 </body>
 </html>
-
-
