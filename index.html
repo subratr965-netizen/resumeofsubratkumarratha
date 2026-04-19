@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>Resume - Subrat Kumar Ratha</title>
     <style>
-        /* =========================================
-           1. RESUME PAGE (A4 SETTINGS)
-        ========================================= */
         body {
             background-color: #e0e0e0;
             display: flex;
@@ -19,8 +16,8 @@
 
         .resume-container {
             background-color: white;
-            width: 210mm; /* Standard A4 Width */
-            min-height: 297mm; /* Standard A4 Height */
+            width: 210mm;
+            min-height: 297mm;
             padding: 15mm;
             border: 1px solid #d3d3d3;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -28,7 +25,6 @@
             position: relative;
         }
 
-        /* Print Button Style */
         .print-btn {
             position: fixed;
             bottom: 30px;
@@ -45,21 +41,15 @@
             z-index: 1000;
         }
 
-        .print-btn:hover { background-color: #27ae60; }
-
-        /* =========================================
-           2. SLIDER (AUTO + MANUAL)
-        ========================================= */
         .slider-container {
             width: 100%;
-            overflow-x: auto; /* Manual Scroll Enabled */
+            overflow-x: auto;
             background: #fff;
             white-space: nowrap;
             position: relative;
             padding: 20px 0;
             border-top: 2px solid black;
             border-bottom: 2px solid black;
-            scrollbar-width: thin; /* For Firefox */
         }
 
         .slide-track {
@@ -68,49 +58,22 @@
             animation: scroll 30s linear infinite;
         }
 
-        /* Hover to Pause Auto-scroll and use Manual */
-        .slider-container:hover .slide-track {
-            animation-play-state: paused;
-        }
+        .slider-container:hover .slide-track { animation-play-state: paused; }
 
-        .slide-item {
-            width: 250px;
-            margin: 0 15px;
-            text-align: center;
-            flex-shrink: 0;
-        }
+        .slide-item { width: 250px; margin: 0 15px; text-align: center; flex-shrink: 0; }
+        .slide-item img { width: 100%; height: 160px; object-fit: cover; border: 2px solid #ddd; border-radius: 8px; cursor: pointer; }
+        .slide-item p { margin-top: 10px; padding: 5px 15px; background-color: #ff4757; color: white; font-size: 12px; border-radius: 15px; }
 
-        .slide-item img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .slide-item p {
-            margin-top: 10px;
-            padding: 5px 15px;
-            background-color: #ff4757;
-            color: white;
-            font-size: 12px;
-            border-radius: 15px;
-        }
-
-        /* =========================================
-           3. PRINT SETTINGS (Hides Button)
-        ========================================= */
         @media print {
             body { background: none; padding: 0; }
             .resume-container { box-shadow: none; border: none; width: 100%; }
-            .print-btn, .slider-container::-webkit-scrollbar { display: none; }
+            .print-btn { display: none; }
             @page { size: A4; margin: 0; }
         }
 
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-280px * 7)); } 
+            100% { transform: translateX(calc(-280px * 8)); } 
         }
 
         table { border-collapse: collapse; width: 100%; margin-top: 15px; }
@@ -126,19 +89,17 @@
         <h1 align="CENTER"> RESUME OF <br> SUBRAT KUMAR RATHA </h1>
         <hr color="GREEN">
 
-        <font size="4">
-            <marquee bgcolor="yellow" scrollamount="7">
-                HELLO, MY NAME IS <b>SUBRAT KUMAR RATHA.</b> AND THIS WEBSITE IS MY DIGITAL RESUME!
-            </marquee>
-        </font>
+        <marquee bgcolor="yellow" scrollamount="7" style="font-size: 18px; padding: 5px;">
+            HELLO, MY NAME IS <b>SUBRAT KUMAR RATHA.</b> AND THIS WEBSITE IS MY DIGITAL RESUME!
+        </marquee>
         
-       <hr color="black">
+        <hr color="black">
 
         <h2 align="center" style="color:red; margin: 10px 0;">BASIC INFORMATION</h2>
         
-        <img src="SRK PASSBOARD IMG.jpg" width="130" align="right" style="border: 3px solid black; margin-left: 15px;" alt="Profile Photo">  
+        <img src="SRK PASSBOARD IMG.jpg" width="130" align="right" style="border: 3px solid black; margin-left: 15px;" alt="Profile Photo">
 
-        <ul style="line-height: 1.6;">            
+        <ul style="line-height: 1.8;">            
             <li> NAME: <b>SUBRAT KUMAR RATHA</b></li>
             <li> FATHER'S NAME: <b> MAHENDRA RATHA</b></li>
             <li> MOTHER'S NAME: <b>BISHNUPRIYA RATHA</b></li>
@@ -147,56 +108,58 @@
             <li> STATE: <b>ODISHA </b></li>
             <li> DISTRICT: <b>SONEPUR</b></li>
             <li> CONTACT: <b>7008244148 / 8260739946</b></li>
-	    <li> GMAIL ID: <b>subratr965@gmail.com </b></li>
-
+            <li> GMAIL ID: <b>subratr965@gmail.com </b></li>
         </ul>
 
-				   
-        					  		 <!-------hobbies and skills --------->
-     					  
+        <br>
+        <hr color="black">
+        <h2 align="center" style="color:darkorange; margin: 10px 0;">CREATIVE HOBBIES & SKILLS</h2>
+        <hr color="black">
 
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px;">
+            <div style="width: 28%; border: 2px solid #3498db; border-radius: 15px; padding: 15px; text-align: center; background-color: #f7fbff; margin-bottom: 10px;">
+                <span style="font-size: 40px;">🤖</span>
+                <h3 style="color: #2980b9; margin: 5px 0;">AI Coding</h3>
+                <p style="font-size: 12px; color: #555;">Building web projects using AI tools.</p>
+            </div>
+            <div style="width: 28%; border: 2px solid #e67e22; border-radius: 15px; padding: 15px; text-align: center; background-color: #fff9f4; margin-bottom: 10px;">
+                <span style="font-size: 40px;">📸</span>
+                <h3 style="color: #d35400; margin: 5px 0;">Photo Editing</h3>
+                <p style="font-size: 12px; color: #555;">Digital art and composition.</p>
+            </div>
+            <div style="width: 28%; border: 2px solid #9b59b6; border-radius: 15px; padding: 15px; text-align: center; background-color: #fcf3ff; margin-bottom: 10px;">
+                <span style="font-size: 40px;">🎬</span>
+                <h3 style="color: #8e44ad; margin: 5px 0;">Video Editing</h3>
+                <p style="font-size: 12px; color: #555;">Engaging stories and cinematic cuts.</p>
+            </div>
+        </div>
 
-<br>
-<hr color="black">
-<h2 align="center" style="color:darkorange; margin: 10px 0;">CREATIVE HOBBIES & SKILLS</h2>
-<hr color="black">
+        <hr color="black">
+        <h2 align="center" style="color:blue; margin: 10px 0;">ACADEMIC CERTIFICATES</h2>
 
-<div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px;">
-    
-    <div style="width: 28%; border: 2px solid #3498db; border-radius: 15px; padding: 15px; text-align: center; background-color: #f7fbff; margin-bottom: 10px;">
-        <span style="font-size: 40px;">🤖</span>
-        <h3 style="color: #2980b9; margin: 10px 0;">AI Coding</h3>
-        <p style="font-size: 13px; color: #555;">Leveraging AI tools to build web projects and solve logical problems efficiently.</p>
-    </div>
-
-    <div style="width: 28%; border: 2px solid #e67e22; border-radius: 15px; padding: 15px; text-align: center; background-color: #fff9f4; margin-bottom: 10px;">
-        <span style="font-size: 40px;">📸</span>
-        <h3 style="color: #d35400; margin: 10px 0;">Photo Editing</h3>
-        <p style="font-size: 13px; color: #555;">Enhancing visuals and creating digital art with focus on color correction and composition.</p>
-    </div>
-
-    <div style="width: 28%; border: 2px solid #9b59b6; border-radius: 15px; padding: 15px; text-align: center; background-color: #fcf3ff; margin-bottom: 10px;">
-        <span style="font-size: 40px;">🎬</span>
-        <h3 style="color: #8e44ad; margin: 10px 0;">Video Editing</h3>
-        <p style="font-size: 13px; color: #555;">Crafting engaging stories through cinematic cuts, transitions, and sound design.</p>
-    </div>
-
-</div>
-
-<p align="center" style="font-style: italic; color: #777; margin-top: 10px;">
-    "I love exploring the intersection of technology and creativity."
-</p>
+        <div class="slider-container">
+            <div class="slide-track">
+                <div class="slide-item"><img src="+31st.jpg" onclick="window.open(this.src)"><p>+3 First Semester</p></div>
+                <div class="slide-item"><img src="+32nd.jpg" onclick="window.open(this.src)"><p>2nd Sem Marksheet</p></div>
+                <div class="slide-item"><img src="B.JPG" onclick="window.open(this.src)"><p>Birth Certificate</p></div>
+                <div class="slide-item"><img src="RC.jpg" onclick="window.open(this.src)"><p>Residence Certificate</p></div>
+                <div class="slide-item"><img src="COM.JPG" onclick="window.open(this.src)"><p>OSCIT Computer</p></div>
+                <div class="slide-item"><img src="10th.jpg" onclick="window.open(this.src)"><p>10th Certificate</p></div>
+                <div class="slide-item"><img src="12th.jpg" onclick="window.open(this.src)"><p>12th Certificate</p></div>
+                <div class="slide-item"><img src="IKS.jpg" onclick="window.open(this.src)"><p>India Knowledge System</p></div>
+            </div>
+        </div>
 
         <hr color="black">
         <h2 align="center" style="color:blue; margin: 10px 0;">ACADEMIC DETAILS</h2>
-	<hr color="black">
+        <hr color="black">
 
         <table>    
             <tr bgcolor="#f2f2f2">      
                 <th>Sr.No</th>
                 <th>Class</th>
                 <th>School/College</th>
-		<th>District</th>
+                <th>District</th>
                 <th>Year</th>
                 <th>Percentage</th>
             </tr>
@@ -204,7 +167,7 @@
                 <td>01</td>
                 <td>10<sup>th</sup></td>
                 <td>SSVM, BINKA</td>
-		<td>Sonepur</td>
+                <td>Sonepur</td>
                 <td>2022</td>
                 <td>83%</td>
             </tr>
@@ -212,86 +175,73 @@
                 <td>02</td>
                 <td>+2 (ARTS)</td>
                 <td>VEDIC INTERNATIONAL</td>
-		<td>Sambalpur</td>
+                <td>Sambalpur</td>
                 <td>2024</td>
                 <td>81%</td>
             </tr>
-	
-		<tr>      
-                <td>03</td>
-                <td>computer (OSCIT)</td>
-                <td>NICE ACADEMY </td>
-		<td>Sonepur</td>
-                <td>2024</td>
-                <td>81.4%</td>
-            </tr>
 
-	
             <tr>      
-                <td>04</td>
-                <td>+3 (sem 1st)</td>
-                <td>GM UNIVERSITY</td>
-		<td>Sambalpur</td>
-                <td>Current</td>
-                <td>Appearing(ECO)</td>
+                <td>03</td>
+                <td>__</td>
+                <td>NICE COMPUTER ACCADEMIY</td>
+                <td>Sambalpur</td>
+                <td>2024</td>
+                <td>81%</td>
             </tr>
 
+            <tr>      
+                <td rowspan="3" style="text-align: center; vertical-align: middle; font-weight: bold;">04</td>
+                <td colspan="5" style="padding: 0;">
+                    <table style="width: 100%; border: none; margin: 0; border-collapse: collapse;">
+                        <tr>
+                            <td style="width: 30%; border: none; border-bottom: 1px solid black; border-right: 1px solid black; background-color: #f2f2f2; font-weight: bold; padding: 8px;">Course Name</td>
+                            <td style="width: 70%; border: none; border-bottom: 1px solid black; padding: 8px;"> BA (ECONOMICS)</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%; border: none; border-bottom: 1px solid black; border-right: 1px solid black; background-color: #f2f2f2; font-weight: bold; padding: 8px;">Institution</td>
+                            <td style="width: 70%; border: none; border-bottom: 1px solid black; padding: 8px;"> GOVERNMENT </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%; border: none; border-right: 1px solid black; background-color: #f2f2f2; font-weight: bold; padding: 8px;">University Info</td>
+                            <td style="width: 70%; border: none; padding: 8px;">Gangadhar Meher University, Sambalpur, Odisha</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" style="padding: 10px; background-color: #fffdf0; border-top: 1px solid black;">
+                    <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                        <span><b>District:</b> SAMBALPUR</span>
+                        <span><b>Session:</b> 2024 </span>
+                        <span><b>Status:</b> Appearing..</span>
+                    </div>
+
+                    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" style="padding: 0; border-top: 1px solid black;">
+                    <table style="width: 100%; border: none; margin: 0; border-collapse: collapse;">
+                        <tr bgcolor="#f9f9f9"><td colspan="2" align="center" style="font-weight:bold; padding:5px; border:none; border-bottom:1px solid black;">ADDITIONAL SEMESTER DETAILS</td></tr>
+                        <tr><td style="width: 30%; border: none; border-bottom: 1px solid black; border-right: 1px solid black; padding: 8px;">1 YEAR</td><td style="width: 70%; border: none; border-bottom: 1px solid black; padding: 8px;">SEMESTER 1- <B>7.35 SGPA</B>.        SEMESTER 2 - <B>8.09 SGPA</B></td></tr>
+                        <tr><td style="width: 30%; border: none; border-bottom: 1px solid black; border-right: 1px solid black; padding: 8px;">2 YEAR</td><td style="width: 70%; border: none; border-bottom: 1px solid black; padding: 8px;">Detail 2...</td></tr>
+                        <tr><td style="width: 30%; border: none; border-right: 1px solid black; padding: 8px;">3 YEAR</td><td style="width: 70%; border: none; padding: 8px;">Detail 3...</td></tr>
+                    </table>
+                </td>
+            </tr>
+
+            
         </table>
+
+        <br><br>
         
-        <br>
-	<br>
-	<br>
-        <hr color="black">
-        <h2 align="center" style="color:blue; margin: 10px 0;">ACADEMIC CERTIFICATES</h2>
-        <p align="center" style="font-size: 12px;">(Hover to Pause | Drag to Scroll | Click to View)</p>
 
-      
-  <div class="slider-container">
-            <div class="slide-track">
-                <div class="slide-item">
-                    <img src="+31st.jpg" onclick="window.open(this.src)" alt="Sem 1">
-                    <p>+3 First Semester</p>
-                </div>
-				<div class="slide-item">
-                    <img src="+32nd.jpg" onclick="window.open(this.src)">
-                    <p>2ND SEM MARK SHEET</p>
-                </div>
-                <div class="slide-item">
-                    <img src="B.JPG" onclick="window.open(this.src)" alt="Birth">
-                    <p>Birth Certificate</p>
-                </div>
-                <div class="slide-item">
-                    <img src="RC.jpg" onclick="window.open(this.src)">
-                    <p>Residence Certificate</p>
-                </div>
-                <div class="slide-item">
-                    <img src="COM.JPG" onclick="window.open(this.src)">
-                    <p>OSCIT Computer</p>
-                </div>
-                <div class="slide-item">
-                    <img src="10th.jpg" onclick="window.open(this.src)">
-                    <p>10th Certificate</p>
-                </div>
-                <div class="slide-item">
-                    <img src="12th.jpg" onclick="window.open(this.src)">
-                    <p>12th Certificate</p>
-                </div>
-                <div class="slide-item">
-                    <img src="IKS.jpg" onclick="window.open(this.src)">
-                    <p>India Knowledge System</p>
-                </div>
-                <div class="slide-item"><img src="+31st.jpg" onclick="window.open(this.src)"><p>+3 First Semester</p></div>
-                <div class="slide-item"><img src="B.JPG" onclick="window.open(this.src)"><p>Birth Certificate</p></div>
-                <div class="slide-item"><img src="RC.jpg" onclick="window.open(this.src)"><p>Residence Certificate</p></div>
-			</div>	  
-        </div>
-    </div> 
-
-	<div style="margin-top: 100px; text-align: center;">
+        <div style="margin-top: 60px; text-align: center;">
             <p style="font-style: italic; color: #555;">"I love exploring the intersection of technology and creativity."</p>
-            <br><br>
+            <br>
             <p>__________________________</p>
             <p><b>Subrat Kumar Ratha</b><br>(Signature)</p>
         </div>
+    </div>
 </body>
 </html>
